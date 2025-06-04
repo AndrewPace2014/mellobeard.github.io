@@ -1,28 +1,880 @@
-/* Focus States for Accessibility */
-        button:focus,
-        a:focus {
-            outline: 2px solid var(--accent-color);
-            outline-offset: 2px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Pace - Analytics Executive | Data Transformation Leader | Lorekeepers Haven</title>
+    <meta name="description" content="Andrew Pace, Manager - Product Analytics  at Weedmaps, delivers enterprise data transformation and operational excellence. Proven $22M+ cost savings at Fortune 500 companies.">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --primary-light: #2d4a6b;
+            --secondary-color: #2b6cb0;
+            --accent-color: #d69e2e;
+            --accent-light: #ecc94b;
+            --success-color: #38a169;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --bg-dark: #1a202c;
+            --border-light: #e2e8f0;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            --gradient-accent: linear-gradient(135deg, #d69e2e 0%, #ecc94b 100%);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Typography */
+        .text-gradient {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 54, 93, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-light);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="glow"><stop offset="0%" stop-color="rgba(214,158,46,0.3)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23glow)"/><circle cx="800" cy="700" r="200" fill="url(%23glow)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+            margin-bottom: 16px;
+            opacity: 0.95;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 48px;
+            max-width: 600px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: var(--primary-color);
+            box-shadow: 0 4px 20px rgba(214, 158, 46, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(214, 158, 46, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-light);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 32px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .stat-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .service-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: var(--success-color);
+            font-weight: bold;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(56, 161, 105, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image {
+            aspect-ratio: 1;
+            background: var(--gradient-primary);
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .credentials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .credential {
+            background: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        /* Experience Timeline */
+        .experience {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-accent);
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 40px;
+            margin-bottom: 32px;
+            margin-left: 80px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-item::before {
+            content: '🏮';
+            position: absolute;
+            left: -60px;
+            top: 40px;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            border: 4px solid white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-role {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .timeline-company {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .timeline-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .timeline-achievements {
+            list-style: none;
+        }
+
+        .timeline-achievements li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .timeline-achievements li::before {
+            content: '→';
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: var(--bg-dark);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(2.5rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-description {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 48px;
+        }
+
+        .contact-methods {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-light);
+        }
+
+        .contact-method.primary {
+            background: var(--gradient-accent);
+            color: var(--primary-color);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .contact-method.primary .contact-icon {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-value {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .social-section {
+            margin-top: 48px;
+        }
+
+        .social-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .social-subtitle {
+            text-align: center;
+            opacity: 0.8;
+            margin-bottom: 32px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .social-icon.twitch { background: #9146FF; }
+        .social-icon.steam { background: #171a21; }
+        .social-icon.twitter { background: #1DA1F2; }
+        .social-icon.tiktok { background: #000000; }
+
+        .social-platform {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .social-handle {
+            opacity: 0.7;
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 48px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                flex-direction: column;
+                padding: 32px;
+                gap: 16px;
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+                text-align: center;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .stats-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                margin-left: 60px;
+                padding: 32px;
+            }
+
+            .timeline-item::before {
+                left: -40px;
+            }
+
+            .credentials {
+                grid-template-columns: 1fr;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline-item {
+                margin-left: 40px;
+                padding: 24px;
+            }
+
+            .timeline-item::before {
+                left: -30px;
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <nav class="container">
-            <a href="#home" class="logo">
-                <div class="logo-mark">🏮</div>
-                <span>Lorekeepers Haven</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu" aria-label="Toggle navigation">☰</button>
-        </nav>
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">🏮</div>
+                    <span>Lorekeepers Haven</span>
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu" aria-label="Toggle navigation">☰</button>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -31,20 +883,20 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span>🏮</span>
-                    <span>Currently Manager, Product Analytics at Weedmaps</span>
+                    <span> Manager - Product Analytics at Weedmaps</span>
                 </div>
                 <h1>Andrew Pace</h1>
-                <div class="hero-subtitle">Analytics Executive & Data Transformation Leader</div>
+                <div class="hero-subtitle">Analytics Executive & <span class="text-gradient">Data Transformation Leader</span></div>
                 <p class="hero-description">
-                    Guiding Fortune 500 companies through enterprise analytics transformation. 
-                    Proven track record of $22M+ cost savings and scaling high-performance teams.
+                    Transforming Fortune 500 enterprises through strategic analytics leadership. 
+                    Proven track record of $22M+ cost savings and building high-performance data teams.
                 </p>
-                <div class="cta-container">
-                    <a href="#contact" class="cta-primary">
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-primary">
                         <span>🚀</span>
                         <span>Start Your Transformation</span>
                     </a>
-                    <a href="#experience" class="cta-secondary">
+                    <a href="#experience" class="btn btn-secondary">
                         <span>📊</span>
                         <span>View Track Record</span>
                     </a>
@@ -53,28 +905,29 @@
         </div>
     </section>
 
-    <!-- Value Proposition -->
-    <section class="value-prop">
+    <!-- Stats Section -->
+    <section class="stats">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Fortune 500 Companies Choose Andrew</h2>
-                <p class="section-subtitle">Proven results in enterprise analytics transformation and operational excellence</p>
-            </div>
-            <div class="value-prop-grid">
-                <div class="value-item fade-in">
-                    <div class="value-icon">💰</div>
-                    <div class="value-title">$22M+ Cost Savings</div>
-                    <p class="value-desc">Delivered massive cost optimizations through strategic vendor consolidation and process improvements at scale.</p>
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">$22M+</div>
+                    <div class="stat-label">Cost Savings Delivered</div>
+                    <div class="stat-description">Through strategic vendor consolidation and process optimization</div>
                 </div>
-                <div class="value-item fade-in">
-                    <div class="value-icon">⚡</div>
-                    <div class="value-title">85% Efficiency Gains</div>
-                    <p class="value-desc">Reduced organizational complexity by streamlining Tableau environments and modernizing data infrastructure.</p>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Complexity Reduction</div>
+                    <div class="stat-description">Streamlined Tableau environments and modernized infrastructure</div>
                 </div>
-                <div class="value-item fade-in">
-                    <div class="value-icon">🎯</div>
-                    <div class="value-title">Week-1 Profitability</div>
-                    <p class="value-desc">Achieved $150K+ revenue in first week of product launch through strategic operational oversight and execution.</p>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">Week 1</div>
+                    <div class="stat-label">Profitability Achievement</div>
+                    <div class="stat-description">$150K+ revenue in first week of product launch</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Team Members Led</div>
+                    <div class="stat-description">Scaled and consolidated analytics organizations</div>
                 </div>
             </div>
         </div>
@@ -85,13 +938,13 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Enterprise Analytics Solutions</h2>
-                <p class="section-subtitle">Comprehensive consulting services designed to transform your organization's data capabilities and operational excellence</p>
+                <p class="section-subtitle">Comprehensive consulting services designed to transform your organization's data capabilities and drive operational excellence</p>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-icon">🏮</div>
                     <h3 class="service-title">Analytics Transformation</h3>
-                    <p class="service-desc">End-to-end enterprise data transformation and KPI standardization. Expert consolidation of analytics teams with modern infrastructure architecture.</p>
+                    <p class="service-description">End-to-end enterprise data transformation with KPI standardization and modern infrastructure architecture for scalable growth.</p>
                     <ul class="service-features">
                         <li>Snowflake, DBT, and Tableau implementation</li>
                         <li>Team consolidation and scaling strategies</li>
@@ -102,7 +955,7 @@
                 <div class="service-card fade-in">
                     <div class="service-icon">⛰️</div>
                     <h3 class="service-title">Executive Leadership</h3>
-                    <p class="service-desc">Proven organizational leadership and team building expertise from Fortune 500 environments. Specializing in data-driven culture transformation.</p>
+                    <p class="service-description">Proven organizational leadership expertise from Fortune 500 environments, specializing in data-driven culture transformation.</p>
                     <ul class="service-features">
                         <li>High-performance team development</li>
                         <li>Cross-functional leadership alignment</li>
@@ -113,41 +966,13 @@
                 <div class="service-card fade-in">
                     <div class="service-icon">🗺️</div>
                     <h3 class="service-title">Strategic Operations</h3>
-                    <p class="service-desc">Comprehensive operational strategy from startup to enterprise scale. Experience driving early profitability and implementing agile methodologies.</p>
+                    <p class="service-description">Comprehensive operational strategy from startup to enterprise scale, driving early profitability and implementing agile methodologies.</p>
                     <ul class="service-features">
                         <li>Go-to-market strategy development</li>
                         <li>Process optimization and automation</li>
                         <li>Risk management and compliance</li>
                         <li>Performance measurement systems</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section class="results">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" style="color: white;">Measurable Impact</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Real results from real transformations across multiple industries</p>
-            </div>
-            <div class="results-grid">
-                <div class="result-item fade-in">
-                    <span class="result-number">$22M+</span>
-                    <div class="result-label">Total Cost Savings Delivered</div>
-                </div>
-                <div class="result-item fade-in">
-                    <span class="result-number">85%</span>
-                    <div class="result-label">Complexity Reduction</div>
-                </div>
-                <div class="result-item fade-in">
-                    <span class="result-number">20+</span>
-                    <div class="result-label">Team Members Led</div>
-                </div>
-                <div class="result-item fade-in">
-                    <span class="result-number">3</span>
-                    <div class="result-label">Months Ahead of Schedule</div>
                 </div>
             </div>
         </div>
@@ -160,27 +985,27 @@
                 <div class="about-visual">
                     <div class="about-image">
                         <div style="text-align: center; z-index: 2; position: relative;">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;">🏮</div>
-                            <p style="font-size: 1.25rem; font-weight: 600;">Lorekeepers Haven</p>
-                            <p style="opacity: 0.9;">Guiding Your Analytics Journey</p>
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">🏮</div>
+                            <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Lorekeepers Haven</p>
+                            <p style="opacity: 0.8; font-size: 1.1rem;">Guiding Your Analytics Journey</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-content-text fade-in">
-                    <h2 class="about-title">Your Guide to Analytics Excellence</h2>
-                    <p class="about-desc">
-                        I'm a dynamic analytics executive with deep expertise in enterprise data transformation and organizational leadership. Currently serving as Manager, Product Analytics at Weedmaps, I've delivered proven success consolidating analytics teams, standardizing KPI frameworks, and architecting modern data infrastructure.
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 32px;">Your Guide to Analytics Excellence</h2>
+                    <p class="about-text">
+                        I'm a dynamic analytics executive with deep expertise in enterprise data transformation and organizational leadership. Currently serving as  Manager - Product Analytics at Weedmaps, I've delivered proven success consolidating analytics teams, standardizing KPI frameworks, and architecting modern data infrastructure.
                     </p>
-                    <p class="about-desc">
+                    <p class="about-text">
                         My experience spans Fortune 500 companies like Blizzard Entertainment to high-growth startups, where I've consistently delivered operational excellence across Product, Revenue, and Engineering functions while achieving significant cost optimizations.
                     </p>
                     <div class="credentials">
                         <div class="credential">MBA - Johns Hopkins</div>
-                        <div class="credential">Manager, Product Analytics - Weedmaps</div>
+                        <div class="credential"> Manager - Product Analytics  - Weedmaps</div>
                         <div class="credential">Ex-Blizzard Leadership</div>
                         <div class="credential">Fortune 500 Experience</div>
                     </div>
-                    <p class="about-desc">
+                    <p class="about-text">
                         Through Lorekeepers Haven and my community as MelloBeard, I share insights on analytics, leadership, and the intersection of gaming and business strategy—helping others navigate their transformation journeys with the wisdom of experience.
                     </p>
                 </div>
@@ -193,11 +1018,11 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Professional Journey</h2>
-                <p class="section-subtitle">A proven track record of delivering results across diverse industries and company scales</p>
+                <p class="section-subtitle">A proven track record of delivering measurable results across diverse industries and company scales</p>
             </div>
             <div class="timeline">
                 <div class="timeline-item fade-in">
-                    <h3 class="timeline-role">Head of Analytics</h3>
+                    <h3 class="timeline-role"> Manager - Product Analytics </h3>
                     <div class="timeline-company">Weedmaps (MAPS) - Public Cannabis Technology Platform</div>
                     <div class="timeline-date">February 2025 - Present</div>
                     <ul class="timeline-achievements">
@@ -253,8 +1078,8 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info fade-in">
-                    <h2 class="contact-title">Ready to Transform Your Analytics?</h2>
-                    <p class="contact-desc">
+                    <h2>Ready to Transform Your Analytics?</h2>
+                    <p class="contact-description">
                         Let's discuss how my proven expertise in enterprise data transformation, team leadership, and operational excellence can accelerate your organization's success. I work with companies ready to invest in meaningful change.
                     </p>
                     
@@ -286,7 +1111,8 @@
                             </div>
                         </a>
                     </div>
-                    
+                </div>
+                
                 <div class="social-section fade-in">
                     <h3 class="social-title">Join the Community</h3>
                     <p class="social-subtitle">
@@ -346,7 +1172,7 @@
     <script>
         'use strict';
         
-        // Smooth scrolling for navigation links with security checks
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -376,7 +1202,6 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -398,17 +1223,15 @@
             }
         });
 
-        // Header scroll effect with performance optimization
+        // Header scroll effect
         let ticking = false;
         function updateHeader() {
             const header = document.querySelector('header');
             if (header) {
                 if (window.scrollY > 100) {
-                    header.style.background = 'rgba(35, 57, 91, 0.95)';
-                    header.style.backdropFilter = 'blur(10px)';
+                    header.style.background = 'rgba(26, 54, 93, 0.98)';
                 } else {
-                    header.style.background = 'linear-gradient(135deg, #23395B 0%, #6B8F71 100%)';
-                    header.style.backdropFilter = 'none';
+                    header.style.background = 'rgba(26, 54, 93, 0.95)';
                 }
             }
             ticking = false;
@@ -421,1019 +1244,21 @@
             }
         });
 
-        // Security and error handling
-        window.addEventListener('error', function(e) {
-            console.log('An error occurred');
-            return true;
-        });
-
-        // Security: Remove unauthorized scripts
-        document.addEventListener('DOMContentLoaded', function() {
-            const scripts = document.querySelectorAll('script[src]');
-            scripts.forEach(script => {
-                const src = script.getAttribute('src');
-                if (src && !src.startsWith('data:') && !src.startsWith('blob:')) {
-                    const allowedDomains = ['cdnjs.cloudflare.com'];
-                    const url = new URL(src, window.location.origin);
-                    if (!allowedDomains.includes(url.hostname) && url.origin !== window.location.origin) {
-                        script.remove();
-                    }
+        // Enhanced animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
                 }
             });
-        });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial check
     </script>
 </body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Pace - Analytics Executive | Data Transformation Leader | Lorekeepers Haven</title>
-    <meta name="description" content="Andrew Pace, Head of Analytics at Weedmaps, delivers enterprise data transformation and operational excellence. Proven $22M+ cost savings at Fortune 500 companies. Expert in Snowflake, Tableau, team scaling.">
-    
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    
-    <!-- SEO & Social Meta -->
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://andrewpace2014.github.io/">
-    <meta property="og:title" content="Andrew Pace - Analytics Executive & Data Transformation Leader">
-    <meta property="og:description" content="Head of Analytics at Weedmaps delivering enterprise transformation. $22M+ proven savings at Fortune 500 companies.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #23395B;
-            --secondary-color: #1a2a40;
-            --accent-color: #C0A25D;
-            --support-color: #6B8F71;
-            --action-color: #D95D39;
-            --text-dark: #1f2937;
-            --text-medium: #4b5563;
-            --text-light: #6b7280;
-            --text-subtle: #9ca3af;
-            --bg-light: #EAEAEA;
-            --bg-subtle: #f9fafb;
-            --white: #ffffff;
-            --gradient-primary: linear-gradient(135deg, #23395B 0%, #6B8F71 100%);
-            --gradient-hero: linear-gradient(135deg, #23395B 0%, #1a2a40 50%, #6B8F71 100%);
-            --gradient-accent: linear-gradient(135deg, #C0A25D 0%, #D4B570 100%);
-            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 4px 15px rgba(35, 57, 91, 0.1);
-            --shadow-strong: 0 10px 30px rgba(35, 57, 91, 0.15);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Typography Scale */
-        .text-xl { font-size: 1.25rem; font-weight: 600; }
-        .text-lg { font-size: 1.125rem; }
-        .text-base { font-size: 1rem; }
-        .text-sm { font-size: 0.875rem; }
-        .text-xs { font-size: 0.75rem; }
-
-        /* Header - Enhanced Professional */
-        header {
-            background: var(--gradient-primary);
-            color: var(--white);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-medium);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 60px;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--white);
-        }
-
-        .logo-mark {
-            width: 48px;
-            height: 48px;
-            background: var(--accent-color);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-subtle);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        /* Hero Section - Marketing Optimized */
-        .hero {
-            background: var(--gradient-hero);
-            color: var(--white);
-            padding: 140px 0 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="lanterns" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><circle cx="100" cy="100" r="3" fill="rgba(192,162,93,0.1)"/></pattern></defs><rect width="1200" height="600" fill="url(%23lanterns)"/></svg>');
-            opacity: 0.4;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
-            margin-bottom: 1rem;
-            opacity: 0.95;
-            font-weight: 500;
-        }
-
-        .hero-description {
-            font-size: 1.125rem;
-            opacity: 0.9;
-            margin-bottom: 3rem;
-            line-height: 1.7;
-        }
-
-        .cta-container {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(192, 162, 93, 0.3);
-            border: 2px solid var(--accent-color);
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(192, 162, 93, 0.4);
-            background: var(--white);
-        }
-
-        .cta-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: transparent;
-            color: var(--white);
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-color);
-        }
-
-        /* Value Proposition Section */
-        .value-prop {
-            padding: 80px 0;
-            background: var(--bg-subtle);
-            text-align: center;
-        }
-
-        .value-prop-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-item {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow-subtle);
-            transition: all 0.3s ease;
-        }
-
-        .value-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .value-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--gradient-accent);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.5rem;
-            color: var(--white);
-        }
-
-        .value-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .value-desc {
-            color: var(--text-medium);
-            line-height: 1.7;
-        }
-
-        /* Services Section - Enhanced */
-        .services {
-            padding: 100px 0;
-            background: var(--white);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-medium);
-            line-height: 1.6;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-subtle);
-            transition: all 0.4s ease;
-            border: 1px solid #f1f5f9;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-strong);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-primary);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            color: var(--white);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .service-desc {
-            color: var(--text-medium);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            list-style: none;
-        }
-
-        .service-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-medium);
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            color: var(--support-color);
-            font-weight: bold;
-        }
-
-        /* Results Section - Social Proof */
-        .results {
-            padding: 100px 0;
-            background: var(--gradient-primary);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .result-item {
-            padding: 1.5rem;
-        }
-
-        .result-number {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 900;
-            color: var(--accent-color);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .result-label {
-            font-size: 1.1rem;
-            font-weight: 500;
-            opacity: 0.95;
-        }
-
-        /* About Section - Storytelling */
-        .about {
-            padding: 100px 0;
-            background: var(--bg-subtle);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-visual {
-            position: relative;
-        }
-
-        .about-image {
-            background: var(--gradient-primary);
-            height: 480px;
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-strong);
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="200" cy="200" r="180" fill="none" stroke="rgba(192,162,93,0.3)" stroke-width="2"/><circle cx="200" cy="140" r="30" fill="rgba(192,162,93,0.6)"/><rect x="185" y="160" width="30" height="40" fill="rgba(255,255,255,0.9)" rx="4"/><path d="M100,300 Q200,250 300,300" stroke="rgba(192,162,93,0.6)" stroke-width="3" fill="none"/></svg>') center/80% no-repeat;
-        }
-
-        .about-content-text {
-            text-align: left;
-        }
-
-        .about-title {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .about-desc {
-            font-size: 1.125rem;
-            color: var(--text-medium);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .credentials {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .credential {
-            background: var(--white);
-            padding: 0.75rem 1.25rem;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            box-shadow: var(--shadow-subtle);
-        }
-
-        /* Experience Timeline - Enhanced */
-        .experience {
-            padding: 100px 0;
-            background: var(--white);
-        }
-
-        .timeline {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 2rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--accent-color);
-        }
-
-        .timeline-item {
-            background: var(--white);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            margin-left: 4rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-subtle);
-            position: relative;
-            border: 1px solid #f1f5f9;
-        }
-
-        .timeline-item::before {
-            content: '🏮';
-            position: absolute;
-            left: -3.25rem;
-            top: 2.5rem;
-            background: var(--accent-color);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            box-shadow: var(--shadow-medium);
-            border: 3px solid var(--white);
-        }
-
-        .timeline-role {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-company {
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-date {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline-achievements {
-            list-style: none;
-        }
-
-        .timeline-achievements li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            color: var(--text-medium);
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-        }
-
-        .timeline-achievements li::before {
-            content: '→';
-            color: var(--support-color);
-            font-weight: bold;
-            margin-top: 0.1rem;
-        }
-
-        /* Contact Section - Conversion Optimized */
-        .contact {
-            padding: 100px 0;
-            background: var(--bg-subtle);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .contact-info {
-            text-align: left;
-        }
-
-        .contact-title {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .contact-desc {
-            font-size: 1.125rem;
-            color: var(--text-medium);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .contact-methods {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-subtle);
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            background: var(--bg-subtle);
-            border-radius: 16px;
-            text-decoration: none;
-            color: var(--text-dark);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .contact-method:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-            border-color: var(--accent-color);
-        }
-
-        .contact-method.primary {
-            background: var(--accent-color);
-            color: var(--primary-color);
-        }
-
-        .contact-method.primary:hover {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            font-size: 1.25rem;
-            color: var(--white);
-            flex-shrink: 0;
-        }
-
-        .contact-method.primary .contact-icon {
-            background: var(--primary-color);
-        }
-
-        .contact-method:not(.primary) .contact-icon {
-            background: var(--support-color);
-        }
-
-        .contact-text {
-            flex: 1;
-        }
-
-        .contact-label {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-value {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .response-time {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: var(--white);
-            border-radius: 16px;
-            border-left: 4px solid var(--support-color);
-        }
-
-        .response-time-title {
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .response-time-desc {
-            color: var(--text-medium);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Social Media - Community Focus */
-        .social-section {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-subtle);
-        }
-
-        .social-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .social-subtitle {
-            color: var(--text-medium);
-            text-align: center;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .social-item {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            background: var(--bg-subtle);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text-dark);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .social-item:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-            border-color: var(--accent-color);
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 0.75rem;
-            font-size: 1.1rem;
-            color: var(--white);
-            flex-shrink: 0;
-        }
-
-        .social-icon.twitch { background: #9146FF; }
-        .social-icon.steam { background: #171a21; }
-        .social-icon.twitter { background: #1DA1F2; }
-        .social-icon.tiktok { background: #000000; }
-
-        .social-text {
-            flex: 1;
-        }
-
-        .social-platform {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .social-handle {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 3rem 0;
-            position: relative;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 700;
-        }
-
-        .footer-text {
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--primary-color);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
-                box-shadow: var(--shadow-medium);
-            }
-
-            .nav-links.mobile-open {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero {
-                padding: 120px 0 80px;
-                text-align: center;
-            }
-
-            .cta-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-primary, .cta-secondary {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
-
-            .value-prop-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .results-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .timeline::before {
-                left: 1rem;
-            }
-
-            .timeline-item {
-                margin-left: 2.5rem;
-            }
-
-            .timeline-item::before {
-                left: -2.75rem;
-            }
-
-            .social-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 100px 0 60px;
-            }
-
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-item {
-                margin-left: 2rem;
-                padding: 2rem;
-            }
-        }
-
-        /* Performance Optimizations */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Focus States for Accessibility */
-        button:focus,
-        a:focus {
-            outline: 2px solid var(--accent-color);
-            outline
+</html>
