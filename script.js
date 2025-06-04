@@ -88,15 +88,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const src = script.getAttribute('src');
         if (src && !src.startsWith('data:') && !src.startsWith('blob:')) {
             const allowedDomains = ['cdnjs.cloudflare.com'];
-            const url = new URL(src, window.location.origin);
-            if (!allowedDomains.includes(url.hostname) && url.origin !== window.location.origin) {
+            try {
+                const url = new URL(src, window.location.origin);
+                if (!allowedDomains.includes(url.hostname) && url.origin !== window.location.origin) {
+                    script.remove();
+                }
+            } catch (e) {
                 script.remove();
             }
         }
     });
 });
 
-// Enhanced animations and interactions
+// Enhanced scroll animations
 const animateOnScroll = () => {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach(element => {
@@ -109,93 +113,6 @@ const animateOnScroll = () => {
     });
 };
 
-// Add staggered animation delays for better visual flow
-document.addEventListener('DOMContentLoaded', function() {
-    const valueItems = document.querySelectorAll('.value-item');
-    const serviceCards = document.querySelectorAll('.service-card');
-    const resultItems = document.querySelectorAll('.result-item');
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    
-    // Add staggered delays
-    valueItems.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    serviceCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.15}s`;
-    });
-    
-    resultItems.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    timelineItems.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.2}s`;
-    });
-});
-
-// Smooth hover effects for interactive elements
-document.addEventListener('DOMContentLoaded', function() {
-    // Add ripple effect to buttons
-    const buttons = document.querySelectorAll('.cta-primary, .cta-secondary, .contact-method');
-    
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-            
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            ripple.classList.add('ripple');
-            
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
-    });
-});
-
-// Performance optimizations
 window.addEventListener('scroll', animateOnScroll);
-animateOnScroll(); // Initial check
-
-// Preload critical resources
-document.addEventListener('DOMContentLoaded', function() {
-    // Preload fonts and critical images
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'font';
-    link.type = 'font/woff2';
-    link.crossOrigin = 'anonymous';
-    document.head.appendChild(link);
-});
-
-// Add CSS for ripple effect
-const rippleCSS = `
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
-    transform: scale(0);
-    animation: ripple-effect 0.6s ease-out;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes ripple-effect {
-    to {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
-`;
-
-const style = document.createElement('style');
-style.textContent = rippleCSS;
-document.head.appendChild(style);
+// Initial check
+animateOnScroll();
