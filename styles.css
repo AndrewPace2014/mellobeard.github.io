@@ -498,12 +498,13 @@ nav {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    max-width: 1200px;
+    gap: 4rem;
+    max-width: 1000px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .about-visual {
@@ -537,8 +538,8 @@ nav {
 }
 
 .about-content-text {
-    text-align: left;
-    min-width: 0;
+    width: 100%;
+    max-width: 800px;
 }
 
 .about-title {
@@ -547,6 +548,7 @@ nav {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
+    text-align: center;
 }
 
 .about-desc {
@@ -955,8 +957,11 @@ a:focus {
 
     .about-content,
     .contact-content {
-        grid-template-columns: 1fr;
         gap: 3rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
     }
 
     .about-visual {
