@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Pace - Game Design | Leadership Coaching | Analytics</title>
-    <meta name="description" content="Andrew Pace - Experienced executive leader specializing in game design, leadership coaching, and data analytics. Former COO of Never Games with expertise in operational excellence and team building.">
+    <title>Andrew Pace - Analytics Executive | Leadership | Data Transformation</title>
+    <meta name="description" content="Andrew Pace - Executive analytics leader specializing in enterprise data transformation, organizational leadership, and operational excellence. Current Head of Analytics at Weedmaps with proven success at Fortune 500 companies.">
     
     <style>
         * {
@@ -14,14 +14,17 @@
         }
 
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #f59e0b;
+            --primary-color: #23395B;
+            --secondary-color: #1a2a40;
+            --accent-color: #C0A25D;
+            --support-color: #6B8F71;
+            --action-color: #D95D39;
             --text-dark: #1f2937;
             --text-light: #6b7280;
-            --bg-light: #f8fafc;
+            --bg-light: #EAEAEA;
             --white: #ffffff;
-            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-bg: linear-gradient(135deg, #23395B 0%, #6B8F71 100%);
+            --hero-gradient: linear-gradient(135deg, #23395B 0%, #1a2a40 50%, #6B8F71 100%);
         }
 
         body {
@@ -46,7 +49,8 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(35, 57, 91, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         nav {
@@ -58,6 +62,17 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23C0A25D" stroke="%23FFF" stroke-width="3"/><rect x="42" y="30" width="16" height="20" fill="%23D95D39" rx="2"/><rect x="44" y="32" width="12" height="16" fill="%23FFF" opacity="0.9"/><text x="50" y="65" text-anchor="middle" fill="%23FFF" font-size="8" font-family="monospace">LH</text></svg>') center/cover;
+            border-radius: 50%;
+            flex-shrink: 0;
         }
 
         .nav-links {
@@ -87,10 +102,28 @@
 
         /* Hero Section */
         .hero {
-            background: var(--gradient-bg);
+            background: var(--hero-gradient);
             color: var(--white);
             padding: 120px 0 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path d="M0,100 Q250,50 500,100 T1000,100 L1000,300 L0,300 Z" fill="rgba(107,143,113,0.1)"/></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -108,18 +141,21 @@
         .cta-button {
             display: inline-block;
             background: var(--accent-color);
-            color: var(--white);
+            color: var(--primary-color);
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 15px rgba(192, 162, 93, 0.3);
+            border: 2px solid var(--accent-color);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 6px 25px rgba(192, 162, 93, 0.4);
+            background: var(--white);
+            color: var(--primary-color);
         }
 
         /* Services Section */
@@ -158,7 +194,7 @@
         .service-icon {
             width: 80px;
             height: 80px;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--support-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -166,6 +202,7 @@
             margin: 0 auto 1.5rem;
             font-size: 2rem;
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(35, 57, 91, 0.2);
         }
 
         .service-card h3 {
@@ -221,7 +258,7 @@
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         .stat-label {
@@ -238,6 +275,12 @@
             justify-content: center;
             color: var(--white);
             font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="%23C0A25D" stroke="%23FFF" stroke-width="4"/><rect x="85" y="60" width="30" height="40" fill="%23D95D39" rx="4"/><rect x="90" y="65" width="20" height="30" fill="%23FFF" opacity="0.9"/><rect x="75" y="120" width="50" height="20" fill="%236B8F71" rx="2"/><text x="100" y="135" text-anchor="middle" fill="%23FFF" font-size="8">KNOWLEDGE</text><path d="M50,150 Q100,120 150,150" stroke="%23C0A25D" stroke-width="3" fill="none"/></svg>');
+            background-position: center;
+            background-size: 80%;
+            background-repeat: no-repeat;
         }
 
         /* Experience Section */
@@ -256,8 +299,24 @@
             padding: 2rem;
             margin-bottom: 2rem;
             border-radius: 15px;
-            border-left: 4px solid var(--primary-color);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 5px 25px rgba(35, 57, 91, 0.08);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '🏮';
+            position: absolute;
+            left: -12px;
+            top: 2rem;
+            background: var(--accent-color);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
         }
 
         .timeline-item h3 {
@@ -267,7 +326,7 @@
         }
 
         .timeline-item .company {
-            color: var(--primary-color);
+            color: var(--accent-color);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
@@ -319,13 +378,14 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--accent-color), var(--support-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 1rem;
             color: var(--white);
+            box-shadow: 0 3px 10px rgba(192, 162, 93, 0.3);
         }
 
         .contact-form {
@@ -358,7 +418,8 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-color);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(192, 162, 93, 0.1);
         }
 
         .form-group textarea {
@@ -367,28 +428,121 @@
         }
 
         .submit-btn {
-            background: var(--primary-color);
-            color: var(--white);
+            background: var(--accent-color);
+            color: var(--primary-color);
             padding: 12px 30px;
             border: none;
             border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             width: 100%;
+            box-shadow: 0 3px 10px rgba(192, 162, 93, 0.3);
         }
 
         .submit-btn:hover {
-            background: var(--secondary-color);
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(35, 57, 91, 0.3);
         }
 
-        /* Footer */
+        /* Social Media Section */
+        .social-links {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+        }
+
+        .social-links h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            background: var(--white);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .social-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            color: var(--accent-color);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+            color: var(--white);
+        }
+
+        .social-icon.twitch {
+            background: #9146FF;
+        }
+
+        .social-icon.steam {
+            background: #171a21;
+        }
+
+        .social-icon.twitter {
+            background: #1DA1F2;
+        }
+
+        .social-icon.tiktok {
+            background: #000000;
+        }
+
+        .social-text {
+            flex: 1;
+        }
+
+        .social-platform {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .social-handle {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
         footer {
-            background: var(--text-dark);
+            background: var(--primary-color);
             color: var(--white);
             text-align: center;
             padding: 2rem 0;
+            position: relative;
+        }
+
+        footer::before {
+            content: '🏮 ⛰️ 🗺️';
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.3;
+            font-size: 1.5rem;
         }
 
         /* Responsive Design */
@@ -461,7 +615,10 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">Andrew Pace</div>
+            <div class="logo">
+                <div class="logo-image"></div>
+                Lorekeepers Haven
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -477,30 +634,65 @@
     <section id="home" class="hero">
         <div class="container">
             <h1>Andrew Pace</h1>
-            <p>Game Design | Leadership Coaching | Analytics</p>
-            <a href="#contact" class="cta-button">Let's Work Together</a>
+            <p>Guiding Organizations Through Analytics Transformation</p>
+            <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;">🏮 Illuminating the path to operational excellence and data-driven success</p>
+            <a href="#contact" class="cta-button">Begin Your Journey</a>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Consulting Services</h2>
+            <h2 class="section-title">Consulting & Leadership Services</h2>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">🎮</div>
-                    <h3>Game Design Consulting</h3>
-                    <p>Strategic game development guidance with proven experience in creating engaging gaming experiences. From concept to launch, I help teams build world-class games that resonate with players and drive business success.</p>
+                    <div class="service-icon">🏮</div>
+                    <h3>Analytics Transformation</h3>
+                    <p>Enterprise data transformation and KPI standardization across organizations. Expert in consolidating analytics teams, architecting modern data infrastructure with tools like Snowflake, DBT, and Tableau, delivering millions in cost savings.</p>
+                    
+                    <div class="social-links">
+                        <h3>Connect & Follow</h3>
+                        <div class="social-grid">
+                            <a href="https://www.twitch.tv/mellobeard" target="_blank" class="social-item">
+                                <div class="social-icon twitch">📺</div>
+                                <div class="social-text">
+                                    <div class="social-platform">Twitch</div>
+                                    <div class="social-handle">@mellobeard</div>
+                                </div>
+                            </a>
+                            <a href="https://steamcommunity.com/id/picante12/" target="_blank" class="social-item">
+                                <div class="social-icon steam">🎮</div>
+                                <div class="social-text">
+                                    <div class="social-platform">Steam</div>
+                                    <div class="social-handle">picante12</div>
+                                </div>
+                            </a>
+                            <a href="https://twitter.com/MelloBeard1" target="_blank" class="social-item">
+                                <div class="social-icon twitter">🐦</div>
+                                <div class="social-text">
+                                    <div class="social-platform">Twitter/X</div>
+                                    <div class="social-handle">@MelloBeard1</div>
+                                </div>
+                            </a>
+                            <a href="https://www.tiktok.com/@mellobeardtv" target="_blank" class="social-item">
+                                <div class="social-icon tiktok">🎵</div>
+                                <div class="social-text">
+                                    <div class="social-platform">TikTok</div>
+                                    <div class="social-handle">@mellobeardtv</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">👥</div>
-                    <h3>Leadership Coaching</h3>
-                    <p>Executive leadership development focused on building high-performing teams and fostering innovation. Drawing from experience as a former COO, I help leaders create cultures of operational excellence and meaningful change.</p>
+                    <div class="service-icon">⛰️</div>
+                    <h3>Executive Leadership</h3>
+                    <p>Organizational leadership and team building expertise proven at Fortune 500 companies. Specializing in scaling analytics teams, driving operational excellence, and fostering data-driven cultures in publicly-traded environments.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">📊</div>
-                    <h3>Data Analytics</h3>
-                    <p>Data-driven insights and KPI development to enhance customer experience and operational performance. Expertise in SQL, Tableau, GCP, and advanced analytics methodologies including A/B testing and predictive modeling.</p>
+                    <div class="service-icon">🗺️</div>
+                    <h3>Strategic Operations</h3>
+                    <p>End-to-end operational strategy development from startup to enterprise scale. Experience driving early profitability, reducing operational costs by 40%+, and implementing agile methodologies to optimize project timelines.</p>
                 </div>
             </div>
         </div>
@@ -511,30 +703,33 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <p>Professional Portfolio<br>Coming Soon</p>
+                    <div style="text-align: center; z-index: 2; position: relative;">
+                        <p><strong>Lorekeepers Haven</strong></p>
+                        <p style="font-size: 1rem; opacity: 0.9;">Guiding Your Journey</p>
+                    </div>
                 </div>
                 <div class="about-text fade-in">
-                    <h2>Driving Innovation & Operational Excellence</h2>
-                    <p>I'm an accomplished executive leader with over a decade of experience creating analytics that enhance customer experience across Entertainment, Customer Service, and Technology sectors.</p>
-                    <p>As former COO of Never Games, I led the development of strategic operating plans that achieved profitability within 12 months of company inception. My approach combines visionary leadership with data-driven methodologies to build world-class organizations.</p>
-                    <p>I'm passionate about fostering cultures of innovation and diversity through the creation, mentorship, and growth of high-performing teams.</p>
+                    <h2>Driving Enterprise Analytics Excellence</h2>
+                    <p>I'm a dynamic analytics executive with expertise in enterprise data transformation and organizational leadership. Currently serving as Head of Analytics at Weedmaps, I've proven success consolidating analytics teams, standardizing company-wide KPI frameworks, and architecting modern data infrastructure.</p>
+                    <p>My experience spans from Fortune 500 companies like Blizzard Entertainment to high-growth startups, where I've consistently delivered operational excellence across Product, Revenue, and Engineering functions while achieving significant cost optimizations and fostering data-driven cultures.</p>
+                    <p>Through Lorekeepers Haven and my Twitch community as MelloBeard, I share insights on analytics, leadership, and the intersection of gaming and business strategy, helping others navigate their own transformation journeys.</p>
                     
                     <div class="stats">
                         <div class="stat">
-                            <div class="stat-number">$20M+</div>
-                            <div class="stat-label">Annual Cost Savings Led</div>
+                            <div class="stat-number">$22M+</div>
+                            <div class="stat-label">Total Cost Savings Delivered</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">1000+</div>
-                            <div class="stat-label">Community Members Engaged</div>
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">Tableau Complexity Reduction</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">50%</div>
-                            <div class="stat-label">Increase in Engagement & Sales</div>
+                            <div class="stat-number">$150K</div>
+                            <div class="stat-label">First Week Launch Revenue</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">12</div>
-                            <div class="stat-label">Months to Profitability</div>
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Team Members Led at Weedmaps</div>
                         </div>
                     </div>
                 </div>
@@ -548,28 +743,52 @@
             <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
                 <div class="timeline-item fade-in">
-                    <h3>Chief Operating Officer</h3>
-                    <div class="company">Never Games</div>
-                    <div class="date">Recent Experience</div>
+                    <h3>Head of Analytics</h3>
+                    <div class="company">Weedmaps (MAPS) - Publicly Traded Cannabis Technology Platform</div>
+                    <div class="date">February 2025 - Present</div>
                     <ul>
-                        <li>Engineered strategic operating plans, achieving profitability within 12 months of company inception</li>
-                        <li>Formulated successful global go-to-market plan for automation and logistics game under $100K budget</li>
-                        <li>Facilitated engaged community of 1000+ people through strategic social platform management</li>
-                        <li>Orchestrated production for four engineers, exceeding customer expectations and increasing engagement by 50%</li>
-                        <li>Authorized trademark and IP filings, protecting company assets worth $100K+</li>
+                        <li>Leading enterprise analytics transformation for $160.55M market cap company</li>
+                        <li>Pioneered company-wide KPI standardization across all 7 business functions</li>
+                        <li>Consolidated 8-person Analytics and Data Science organization reporting directly to CTO</li>
+                        <li>Delivered $2.67M annual cost savings through strategic vendor optimization</li>
+                        <li>Transformed Tableau environment reducing organizational complexity by 85%</li>
+                        <li>Architected modern analytics infrastructure with DBT, Metaplane, and Snowflake</li>
                     </ul>
                 </div>
                 <div class="timeline-item fade-in">
-                    <h3>Senior Data Analytics Leader</h3>
-                    <div class="company">Blizzard Entertainment</div>
-                    <div class="date">Previous Role</div>
+                    <h3>Manager, Business Operations Analytics</h3>
+                    <div class="company">TriWest HealthCare Alliance</div>
+                    <div class="date">January 2024 - September 2024</div>
                     <ul>
-                        <li>Led high-performing team of data analysts, engineers, and software engineers</li>
-                        <li>Aligned analytic vision across multiple departments, balancing competing senior leader priorities</li>
-                        <li>Mentored and empowered 7 employees, nurturing career advancement within the company</li>
-                        <li>Implemented streamlined development workflows, accelerating database migration 3 months ahead of schedule</li>
-                        <li>Governed team overseeing 1000+ Tableau reports delivering operational and strategic insights</li>
-                        <li>Championed diversity through active Culture Task Force participation and policy development</li>
+                        <li>Led strategic growth within new Data Analytics team for DoD's $65.1Bn TriCare contract</li>
+                        <li>Reduced project timelines by implementing ScrumBan Agile workflow</li>
+                        <li>Expanded analytics team from one to six professionals in three months</li>
+                        <li>Architected Datawarehouse systems ensuring HIPAA compliance</li>
+                        <li>Pioneered integration of Databricks, Snowflake, and PowerBI platforms</li>
+                    </ul>
+                </div>
+                <div class="timeline-item fade-in">
+                    <h3>Chief Operating Officer</h3>
+                    <div class="company">Never Games Limited</div>
+                    <div class="date">February 2023 - September 2023</div>
+                    <ul>
+                        <li>Achieved early profitability generating $150K+ in first week of launch</li>
+                        <li>Reduced operational costs by 40% through strategic negotiation and contract management</li>
+                        <li>Grew dedicated community of 1,000+ members via strategic social media engagement</li>
+                        <li>Enhanced product delivery leading to 50% increase in customer engagement</li>
+                        <li>Secured intellectual property protection for assets valued over $500K</li>
+                    </ul>
+                </div>
+                <div class="timeline-item fade-in">
+                    <h3>Reporting & Analytics Manager</h3>
+                    <div class="company">Blizzard Entertainment</div>
+                    <div class="date">February 2022 - March 2023</div>
+                    <ul>
+                        <li>Directed analytic strategies across five departments at Fortune 500 gaming company</li>
+                        <li>Realized cost savings of over $20M annually through high-performance team leadership</li>
+                        <li>Accelerated database migration completing projects three months ahead of schedule</li>
+                        <li>Promoted 3 direct reports advancing analysts to Senior and Data Engineer roles</li>
+                        <li>Established KPIs enhancing overall corporate performance and strategic decision-making</li>
                     </ul>
                 </div>
             </div>
@@ -582,13 +801,21 @@
             <div class="contact-content">
                 <div class="contact-info fade-in">
                     <h2>Let's Connect</h2>
-                    <p>Ready to drive innovation and operational excellence in your organization? Let's discuss how my expertise in game design, leadership coaching, and analytics can help achieve your goals.</p>
+                    <p>Ready to transform your organization through strategic analytics and operational excellence? Let's discuss how my expertise in enterprise data transformation, team leadership, and modern analytics infrastructure can drive your business forward.</p>
                     
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div>
-                            <strong>Email</strong><br>
-                            hello@andrewpace.consulting
+                            <strong>Professional Email</strong><br>
+                            mellobeard@lorekeepershaven.com
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Business Email</strong><br>
+                            beard.mello@gmail.com
                         </div>
                     </div>
                     
@@ -597,14 +824,6 @@
                         <div>
                             <strong>LinkedIn</strong><br>
                             /in/andrew-pace-never-games
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">🌐</div>
-                        <div>
-                            <strong>GitHub</strong><br>
-                            github.com/AndrewPace2014
                         </div>
                     </div>
                 </div>
@@ -623,9 +842,11 @@
                             <label for="service">Service Interest</label>
                             <select id="service" name="service">
                                 <option value="">Select a service</option>
-                                <option value="game-design">Game Design Consulting</option>
-                                <option value="leadership">Leadership Coaching</option>
-                                <option value="analytics">Data Analytics</option>
+                                <option value="analytics-transformation">Analytics Transformation</option>
+                                <option value="executive-leadership">Executive Leadership</option>
+                                <option value="strategic-operations">Strategic Operations</option>
+                                <option value="team-building">Team Building & Scaling</option>
+                                <option value="data-infrastructure">Data Infrastructure</option>
                                 <option value="multiple">Multiple Services</option>
                             </select>
                         </div>
@@ -643,7 +864,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Andrew Pace. All rights reserved. | Game Design • Leadership Coaching • Analytics</p>
+            <p>&copy; 2025 Andrew Pace | Lorekeepers Haven. All rights reserved.<br>🏮 Guiding Analytics Excellence • ⛰️ Scaling Teams • 🗺️ Charting Success</p>
         </div>
     </footer>
 
@@ -703,9 +924,11 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(37, 99, 235, 0.95)';
+                header.style.background = 'rgba(35, 57, 91, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                header.style.background = 'linear-gradient(135deg, #23395B 0%, #6B8F71 100%)';
+                header.style.backdropFilter = 'none';
             }
         });
     </script>
