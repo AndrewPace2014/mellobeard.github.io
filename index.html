@@ -4,47 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrew Pace - Analytics Executive | Data Transformation Leader | Lorekeepers Haven</title>
-    <meta name="description" content="Andrew Pace, Manager - Product Analytics  at Weedmaps, delivers enterprise data transformation and operational excellence. Proven $22M+ cost savings at Fortune 500 companies.">
+    <meta name="description" content="Andrew Pace, Head of Analytics at Weedmaps, delivers enterprise data transformation and operational excellence. Proven $22M+ cost savings at Fortune 500 companies. Expert in Snowflake, Tableau, team scaling.">
     
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
+    <!-- SEO & Social Meta -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://andrewpace2014.github.io/">
+    <meta property="og:title" content="Andrew Pace - Analytics Executive & Data Transformation Leader">
+    <meta property="og:description" content="Head of Analytics at Weedmaps delivering enterprise transformation. $22M+ proven savings at Fortune 500 companies.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     
     <style>
-        :root {
-            --primary-color: #1a365d;
-            --primary-light: #2d4a6b;
-            --secondary-color: #2b6cb0;
-            --accent-color: #d69e2e;
-            --accent-light: #ecc94b;
-            --success-color: #38a169;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-muted: #718096;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f7fafc;
-            --bg-dark: #1a202c;
-            --border-light: #e2e8f0;
-            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
-            --gradient-accent: linear-gradient(135deg, #d69e2e 0%, #ecc94b 100%);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-color: #23395B;
+            --secondary-color: #1a2a40;
+            --accent-color: #C0A25D;
+            --support-color: #6B8F71;
+            --action-color: #D95D39;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --text-light: #6b7280;
+            --text-subtle: #9ca3af;
+            --bg-light: #EAEAEA;
+            --bg-subtle: #f9fafb;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #23395B 0%, #6B8F71 100%);
+            --gradient-hero: linear-gradient(135deg, #23395B 0%, #1a2a40 50%, #6B8F71 100%);
+            --gradient-accent: linear-gradient(135deg, #C0A25D 0%, #D4B570 100%);
+            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 15px rgba(35, 57, 91, 0.1);
+            --shadow-strong: 0 10px 30px rgba(35, 57, 91, 0.15);
+            --shadow-glow: 0 0 30px rgba(192, 162, 93, 0.3);
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-primary);
+            color: var(--text-dark);
+            background-color: var(--white);
             overflow-x: hidden;
         }
 
@@ -54,95 +65,116 @@
             padding: 0 24px;
         }
 
-        /* Typography */
-        .text-gradient {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Header */
+        /* Enhanced Header */
         header {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1rem 0;
             position: fixed;
+            width: 100%;
             top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(26, 54, 93, 0.95);
-            backdrop-filter: blur(20px);
             z-index: 1000;
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-medium);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .header-content {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 60px;
         }
 
         .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 0.75rem;
             text-decoration: none;
-            color: white;
-            font-weight: 700;
-            font-size: 1.25rem;
+            color: var(--white);
+            transition: var(--transition);
         }
 
-        .logo-icon {
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo-mark {
             width: 48px;
             height: 48px;
-            background: var(--gradient-accent);
+            background: var(--accent-color);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-mark {
+            box-shadow: var(--shadow-glow);
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 32px;
+            gap: 2.5rem;
+            align-items: center;
         }
 
         .nav-links a {
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 0;
         }
 
         .nav-links a:hover {
-            color: var(--accent-light);
-            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .mobile-menu {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
-            padding: 8px;
+            padding: 0.5rem;
         }
 
-        /* Hero Section */
+        /* Enhanced Hero Section */
         .hero {
+            background: var(--gradient-hero);
+            color: var(--white);
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: var(--gradient-primary);
-            position: relative;
-            overflow: hidden;
         }
 
         .hero::before {
@@ -152,182 +184,206 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="glow"><stop offset="0%" stop-color="rgba(214,158,46,0.3)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23glow)"/><circle cx="800" cy="700" r="200" fill="url(%23glow)"/></svg>');
-            opacity: 0.6;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="lanterns" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><circle cx="100" cy="100" r="3" fill="rgba(192,162,93,0.1)"/></pattern></defs><rect width="1200" height="600" fill="url(%23lanterns)"/></svg>');
+            opacity: 0.4;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            color: white;
             max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 12px 24px;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 32px;
+            margin-bottom: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+        }
+
+        .hero-badge:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1.5rem;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
             letter-spacing: -0.02em;
+            line-height: 1.1;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 600;
-            margin-bottom: 16px;
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 1rem;
             opacity: 0.95;
+            font-weight: 600;
         }
 
         .hero-description {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             opacity: 0.9;
+            margin-bottom: 3rem;
             line-height: 1.7;
-            margin-bottom: 48px;
-            max-width: 600px;
         }
 
-        .cta-group {
+        .cta-container {
             display: flex;
-            gap: 16px;
+            gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn {
+        .cta-primary {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            border-radius: 12px;
+            gap: 0.5rem;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
             text-decoration: none;
+            border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(192, 162, 93, 0.3);
+            border: 2px solid var(--accent-color);
         }
 
-        .btn-primary {
-            background: var(--gradient-accent);
-            color: var(--primary-color);
-            box-shadow: 0 4px 20px rgba(214, 158, 46, 0.4);
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(192, 162, 93, 0.4);
+            background: var(--white);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(214, 158, 46, 0.5);
-        }
-
-        .btn-secondary {
+        .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background: transparent;
-            color: white;
+            color: var(--white);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
-        .btn-secondary:hover {
+        .cta-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-light);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
         }
 
-        /* Stats Section */
-        .stats {
-            padding: 80px 0;
-            background: var(--bg-secondary);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 48px;
+        /* Value Proposition Section */
+        .value-prop {
+            padding: 100px 0;
+            background: var(--bg-subtle);
             text-align: center;
-        }
-
-        .stat-item {
-            padding: 32px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            border: 1px solid var(--border-light);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--accent-color);
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-
-        .stat-description {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 120px 0;
-            background: white;
         }
 
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 80px;
+            margin: 0 auto 4rem;
         }
 
         .section-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 24px;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
 
         .section-subtitle {
             font-size: 1.25rem;
-            color: var(--text-secondary);
+            color: var(--text-medium);
             line-height: 1.6;
+        }
+
+        .value-prop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(35, 57, 91, 0.05);
+        }
+
+        .value-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .value-desc {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: var(--white);
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
+            gap: 2.5rem;
         }
 
         .service-card {
-            background: white;
+            background: var(--white);
+            padding: 2.5rem;
             border-radius: 24px;
-            padding: 40px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
-            transition: var(--transition);
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #f1f5f9;
             position: relative;
             overflow: hidden;
         }
@@ -341,7 +397,7 @@
             height: 4px;
             background: var(--gradient-accent);
             transform: scaleX(0);
-            transition: var(--transition);
+            transition: transform 0.4s ease;
         }
 
         .service-card:hover::before {
@@ -349,8 +405,8 @@
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-strong);
         }
 
         .service-icon {
@@ -361,22 +417,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 2rem;
             font-size: 2rem;
-            margin-bottom: 24px;
-            color: white;
+            color: var(--white);
+            box-shadow: var(--shadow-medium);
         }
 
         .service-title {
             font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--text-primary);
+            margin-bottom: 1rem;
+            color: var(--text-dark);
         }
 
-        .service-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 24px;
+        .service-desc {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
         .service-features {
@@ -386,35 +443,80 @@
         .service-features li {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            color: var(--text-secondary);
+            gap: 0.75rem;
+            color: var(--text-medium);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
         }
 
         .service-features li::before {
             content: '✓';
-            color: var(--success-color);
+            color: var(--support-color);
             font-weight: bold;
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: rgba(56, 161, 105, 0.1);
+            background: rgba(107, 143, 113, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
         }
 
+        /* Results Section */
+        .results {
+            padding: 120px 0;
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .result-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .result-number {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--accent-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
         /* About Section */
         .about {
             padding: 120px 0;
-            background: var(--bg-secondary);
+            background: var(--bg-subtle);
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
+            gap: 4rem;
             align-items: center;
         }
 
@@ -423,55 +525,65 @@
         }
 
         .about-image {
-            aspect-ratio: 1;
             background: var(--gradient-primary);
+            height: 480px;
             border-radius: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--white);
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-strong);
         }
 
         .about-image::before {
             content: '';
             position: absolute;
-            inset: 20px;
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 24px;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="200" cy="200" r="180" fill="none" stroke="rgba(192,162,93,0.3)" stroke-width="2"/><circle cx="200" cy="140" r="30" fill="rgba(192,162,93,0.6)"/><rect x="185" y="160" width="30" height="40" fill="rgba(255,255,255,0.9)" rx="4"/><path d="M100,300 Q200,250 300,300" stroke="rgba(192,162,93,0.6)" stroke-width="3" fill="none"/></svg>') center/80% no-repeat;
         }
 
-        .about-text {
+        .about-content-text {
+            text-align: left;
+        }
+
+        .about-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .about-desc {
             font-size: 1.125rem;
-            color: var(--text-secondary);
+            color: var(--text-medium);
             line-height: 1.8;
-            margin-bottom: 32px;
+            margin-bottom: 2rem;
         }
 
         .credentials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .credential {
-            background: white;
-            padding: 16px 20px;
+            background: var(--white);
+            padding: 0.75rem 1.25rem;
             border-radius: 12px;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: var(--text-primary);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
-            text-align: center;
+            color: var(--text-dark);
+            box-shadow: var(--shadow-subtle);
         }
 
         /* Experience Timeline */
         .experience {
             padding: 120px 0;
-            background: white;
+            background: var(--white);
         }
 
         .timeline {
@@ -483,65 +595,65 @@
         .timeline::before {
             content: '';
             position: absolute;
-            left: 40px;
+            left: 2rem;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: var(--gradient-accent);
+            background: var(--accent-color);
         }
 
         .timeline-item {
-            background: white;
-            padding: 40px;
-            margin-bottom: 32px;
-            margin-left: 80px;
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            margin-left: 4rem;
             border-radius: 24px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
             position: relative;
-            transition: var(--transition);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
         }
 
         .timeline-item:hover {
             transform: translateX(8px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-medium);
         }
 
         .timeline-item::before {
             content: '🏮';
             position: absolute;
-            left: -60px;
-            top: 40px;
-            width: 40px;
-            height: 40px;
+            left: -3.25rem;
+            top: 2.5rem;
             background: var(--accent-color);
             border-radius: 50%;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 16px;
-            border: 4px solid white;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-medium);
+            border: 3px solid var(--white);
         }
 
         .timeline-role {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 8px;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
         }
 
         .timeline-company {
-            color: var(--secondary-color);
+            color: var(--accent-color);
             font-weight: 600;
             font-size: 1.1rem;
-            margin-bottom: 4px;
+            margin-bottom: 0.5rem;
         }
 
         .timeline-date {
-            color: var(--text-muted);
+            color: var(--text-light);
             font-size: 0.9rem;
-            margin-bottom: 24px;
+            margin-bottom: 1.5rem;
         }
 
         .timeline-achievements {
@@ -551,147 +663,168 @@
         .timeline-achievements li {
             display: flex;
             align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 16px;
-            color: var(--text-secondary);
+            gap: 0.75rem;
+            color: var(--text-medium);
+            margin-bottom: 0.75rem;
             line-height: 1.6;
         }
 
         .timeline-achievements li::before {
             content: '→';
-            color: var(--success-color);
+            color: var(--support-color);
             font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 2px;
-            flex-shrink: 0;
+            margin-top: 0.1rem;
         }
 
         /* Contact Section */
         .contact {
             padding: 120px 0;
-            background: var(--bg-dark);
-            color: white;
+            background: var(--bg-subtle);
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 4rem;
             align-items: start;
         }
 
-        .contact-info h2 {
-            font-size: clamp(2.5rem, 5vw, 3rem);
+        .contact-info {
+            text-align: left;
+        }
+
+        .contact-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
             font-weight: 800;
-            margin-bottom: 24px;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
         }
 
-        .contact-description {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            line-height: 1.7;
-            margin-bottom: 48px;
+        .contact-desc {
+            font-size: 1.125rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 2rem;
         }
 
         .contact-methods {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: var(--white);
             border-radius: 24px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-subtle);
         }
 
         .contact-method {
             display: flex;
             align-items: center;
-            gap: 20px;
-            padding: 20px;
-            margin-bottom: 16px;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            background: var(--bg-subtle);
             border-radius: 16px;
             text-decoration: none;
-            color: white;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
         .contact-method:hover {
             transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-light);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--accent-color);
         }
 
         .contact-method.primary {
-            background: var(--gradient-accent);
+            background: var(--accent-color);
             color: var(--primary-color);
+        }
+
+        .contact-method.primary:hover {
+            background: var(--primary-color);
+            color: var(--white);
         }
 
         .contact-icon {
             width: 48px;
             height: 48px;
-            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-right: 1rem;
             font-size: 1.25rem;
+            color: var(--white);
+            flex-shrink: 0;
         }
 
         .contact-method.primary .contact-icon {
             background: var(--primary-color);
-            color: white;
+        }
+
+        .contact-method:not(.primary) .contact-icon {
+            background: var(--support-color);
+        }
+
+        .contact-text {
+            flex: 1;
         }
 
         .contact-label {
             font-weight: 600;
-            margin-bottom: 4px;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
         }
 
         .contact-value {
+            font-size: 0.9rem;
             opacity: 0.8;
-            font-size: 0.95rem;
         }
 
+        /* Social Media Section */
         .social-section {
-            margin-top: 48px;
+            background: var(--white);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-subtle);
         }
 
         .social-title {
             font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 16px;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
             text-align: center;
         }
 
         .social-subtitle {
+            color: var(--text-medium);
             text-align: center;
-            opacity: 0.8;
-            margin-bottom: 32px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
         .social-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            gap: 1rem;
         }
 
         .social-item {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 16px;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            background: var(--bg-subtle);
             border-radius: 12px;
             text-decoration: none;
-            color: white;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
         .social-item:hover {
-            background: rgba(255, 255, 255, 0.1);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--accent-color);
         }
 
         .social-icon {
@@ -701,8 +834,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-right: 0.75rem;
             font-size: 1.1rem;
-            color: white;
+            color: var(--white);
+            flex-shrink: 0;
         }
 
         .social-icon.twitch { background: #9146FF; }
@@ -710,37 +845,48 @@
         .social-icon.twitter { background: #1DA1F2; }
         .social-icon.tiktok { background: #000000; }
 
+        .social-text {
+            flex: 1;
+        }
+
         .social-platform {
             font-weight: 600;
             font-size: 0.9rem;
+            margin-bottom: 0.2rem;
         }
 
         .social-handle {
-            opacity: 0.7;
             font-size: 0.8rem;
+            color: var(--text-light);
         }
 
         /* Footer */
         footer {
             background: var(--primary-color);
-            color: white;
+            color: var(--white);
             text-align: center;
-            padding: 48px 0;
+            padding: 3rem 0;
+            position: relative;
         }
 
         .footer-content {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 24px;
-            margin-bottom: 16px;
+            gap: 2rem;
+            margin-bottom: 1rem;
         }
 
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 0.5rem;
             font-weight: 700;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            font-size: 0.95rem;
         }
 
         /* Animations */
@@ -758,7 +904,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
-                padding: 0 20px;
+                padding: 0 16px;
             }
 
             .nav-links {
@@ -769,9 +915,9 @@
                 right: 0;
                 background: var(--primary-color);
                 flex-direction: column;
-                padding: 32px;
-                gap: 16px;
-                box-shadow: var(--shadow-lg);
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: var(--shadow-medium);
             }
 
             .nav-links.mobile-open {
@@ -787,47 +933,54 @@
                 text-align: center;
             }
 
-            .cta-group {
+            .cta-container {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .btn {
+            .cta-primary, .cta-secondary {
                 width: 100%;
                 max-width: 280px;
                 justify-content: center;
             }
 
-            .stats-grid,
+            .value-prop-grid,
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
-                gap: 48px;
+                gap: 3rem;
             }
 
             .timeline::before {
-                left: 20px;
+                left: 1rem;
             }
 
             .timeline-item {
-                margin-left: 60px;
-                padding: 32px;
+                margin-left: 2.5rem;
             }
 
             .timeline-item::before {
-                left: -40px;
-            }
-
-            .credentials {
-                grid-template-columns: 1fr;
+                left: -2.75rem;
             }
 
             .social-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
             }
         }
 
@@ -836,45 +989,41 @@
                 padding: 100px 0 60px;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .results-grid {
+                grid-template-columns: 1fr;
             }
 
             .timeline-item {
-                margin-left: 40px;
-                padding: 24px;
+                margin-left: 2rem;
+                padding: 2rem;
             }
+        }
 
-            .timeline-item::before {
-                left: -30px;
-                width: 32px;
-                height: 32px;
-                font-size: 14px;
-            }
+        /* Focus States for Accessibility */
+        button:focus,
+        a:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#home" class="logo">
-                    <div class="logo-icon">🏮</div>
-                    <span>Lorekeepers Haven</span>
-                </a>
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                    <button class="mobile-menu" aria-label="Toggle navigation">☰</button>
-                </nav>
-            </div>
-        </div>
+        <nav class="container">
+            <a href="#home" class="logo">
+                <div class="logo-mark">🏮</div>
+                <span>Lorekeepers Haven</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu" aria-label="Toggle navigation">☰</button>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -883,20 +1032,20 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span>🏮</span>
-                    <span> Manager - Product Analytics at Weedmaps</span>
+                    <span>Currently Head of Analytics at Weedmaps</span>
                 </div>
                 <h1>Andrew Pace</h1>
-                <div class="hero-subtitle">Analytics Executive & <span class="text-gradient">Data Transformation Leader</span></div>
+                <div class="hero-subtitle">Analytics Executive & Data Transformation Leader</div>
                 <p class="hero-description">
-                    Transforming Fortune 500 enterprises through strategic analytics leadership. 
-                    Proven track record of $22M+ cost savings and building high-performance data teams.
+                    Guiding Fortune 500 companies through enterprise analytics transformation. 
+                    Proven track record of $22M+ cost savings and scaling high-performance teams.
                 </p>
-                <div class="cta-group">
-                    <a href="#contact" class="btn btn-primary">
+                <div class="cta-container">
+                    <a href="#contact" class="cta-primary">
                         <span>🚀</span>
                         <span>Start Your Transformation</span>
                     </a>
-                    <a href="#experience" class="btn btn-secondary">
+                    <a href="#experience" class="cta-secondary">
                         <span>📊</span>
                         <span>View Track Record</span>
                     </a>
@@ -905,29 +1054,28 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Value Proposition -->
+    <section class="value-prop">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item fade-in">
-                    <div class="stat-number">$22M+</div>
-                    <div class="stat-label">Cost Savings Delivered</div>
-                    <div class="stat-description">Through strategic vendor consolidation and process optimization</div>
+            <div class="section-header">
+                <h2 class="section-title">Why Fortune 500 Companies Choose Andrew</h2>
+                <p class="section-subtitle">Proven results in enterprise analytics transformation and operational excellence</p>
+            </div>
+            <div class="value-prop-grid">
+                <div class="value-item fade-in">
+                    <div class="value-icon">💰</div>
+                    <div class="value-title">$22M+ Cost Savings</div>
+                    <p class="value-desc">Delivered massive cost optimizations through strategic vendor consolidation and process improvements at scale.</p>
                 </div>
-                <div class="stat-item fade-in">
-                    <div class="stat-number">85%</div>
-                    <div class="stat-label">Complexity Reduction</div>
-                    <div class="stat-description">Streamlined Tableau environments and modernized infrastructure</div>
+                <div class="value-item fade-in">
+                    <div class="value-icon">⚡</div>
+                    <div class="value-title">85% Efficiency Gains</div>
+                    <p class="value-desc">Reduced organizational complexity by streamlining Tableau environments and modernizing data infrastructure.</p>
                 </div>
-                <div class="stat-item fade-in">
-                    <div class="stat-number">Week 1</div>
-                    <div class="stat-label">Profitability Achievement</div>
-                    <div class="stat-description">$150K+ revenue in first week of product launch</div>
-                </div>
-                <div class="stat-item fade-in">
-                    <div class="stat-number">8+</div>
-                    <div class="stat-label">Team Members Led</div>
-                    <div class="stat-description">Scaled and consolidated analytics organizations</div>
+                <div class="value-item fade-in">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-title">Week-1 Profitability</div>
+                    <p class="value-desc">Achieved $150K+ revenue in first week of product launch through strategic operational oversight and execution.</p>
                 </div>
             </div>
         </div>
@@ -938,13 +1086,13 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Enterprise Analytics Solutions</h2>
-                <p class="section-subtitle">Comprehensive consulting services designed to transform your organization's data capabilities and drive operational excellence</p>
+                <p class="section-subtitle">Comprehensive consulting services designed to transform your organization's data capabilities and operational excellence</p>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-icon">🏮</div>
                     <h3 class="service-title">Analytics Transformation</h3>
-                    <p class="service-description">End-to-end enterprise data transformation with KPI standardization and modern infrastructure architecture for scalable growth.</p>
+                    <p class="service-desc">End-to-end enterprise data transformation and KPI standardization. Expert consolidation of analytics teams with modern infrastructure architecture.</p>
                     <ul class="service-features">
                         <li>Snowflake, DBT, and Tableau implementation</li>
                         <li>Team consolidation and scaling strategies</li>
@@ -955,7 +1103,7 @@
                 <div class="service-card fade-in">
                     <div class="service-icon">⛰️</div>
                     <h3 class="service-title">Executive Leadership</h3>
-                    <p class="service-description">Proven organizational leadership expertise from Fortune 500 environments, specializing in data-driven culture transformation.</p>
+                    <p class="service-desc">Proven organizational leadership and team building expertise from Fortune 500 environments. Specializing in data-driven culture transformation.</p>
                     <ul class="service-features">
                         <li>High-performance team development</li>
                         <li>Cross-functional leadership alignment</li>
@@ -966,13 +1114,41 @@
                 <div class="service-card fade-in">
                     <div class="service-icon">🗺️</div>
                     <h3 class="service-title">Strategic Operations</h3>
-                    <p class="service-description">Comprehensive operational strategy from startup to enterprise scale, driving early profitability and implementing agile methodologies.</p>
+                    <p class="service-desc">Comprehensive operational strategy from startup to enterprise scale. Experience driving early profitability and implementing agile methodologies.</p>
                     <ul class="service-features">
                         <li>Go-to-market strategy development</li>
                         <li>Process optimization and automation</li>
                         <li>Risk management and compliance</li>
                         <li>Performance measurement systems</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Measurable Impact</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Real results from real transformations across multiple industries</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-item fade-in">
+                    <span class="result-number">$22M+</span>
+                    <div class="result-label">Total Cost Savings Delivered</div>
+                </div>
+                <div class="result-item fade-in">
+                    <span class="result-number">85%</span>
+                    <div class="result-label">Complexity Reduction</div>
+                </div>
+                <div class="result-item fade-in">
+                    <span class="result-number">8</span>
+                    <div class="result-label">Team Members Led</div>
+                </div>
+                <div class="result-item fade-in">
+                    <span class="result-number">3</span>
+                    <div class="result-label">Months Ahead of Schedule</div>
                 </div>
             </div>
         </div>
@@ -985,27 +1161,27 @@
                 <div class="about-visual">
                     <div class="about-image">
                         <div style="text-align: center; z-index: 2; position: relative;">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;">🏮</div>
-                            <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Lorekeepers Haven</p>
-                            <p style="opacity: 0.8; font-size: 1.1rem;">Guiding Your Analytics Journey</p>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🏮</div>
+                            <p style="font-size: 1.25rem; font-weight: 600;">Lorekeepers Haven</p>
+                            <p style="opacity: 0.9;">Guiding Your Analytics Journey</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-content-text fade-in">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 32px;">Your Guide to Analytics Excellence</h2>
-                    <p class="about-text">
-                        I'm a dynamic analytics executive with deep expertise in enterprise data transformation and organizational leadership. Currently serving as  Manager - Product Analytics at Weedmaps, I've delivered proven success consolidating analytics teams, standardizing KPI frameworks, and architecting modern data infrastructure.
+                    <h2 class="about-title">Your Guide to Analytics Excellence</h2>
+                    <p class="about-desc">
+                        I'm a dynamic analytics executive with deep expertise in enterprise data transformation and organizational leadership. Currently serving as Head of Analytics at Weedmaps, I've delivered proven success consolidating analytics teams, standardizing KPI frameworks, and architecting modern data infrastructure.
                     </p>
-                    <p class="about-text">
+                    <p class="about-desc">
                         My experience spans Fortune 500 companies like Blizzard Entertainment to high-growth startups, where I've consistently delivered operational excellence across Product, Revenue, and Engineering functions while achieving significant cost optimizations.
                     </p>
                     <div class="credentials">
                         <div class="credential">MBA - Johns Hopkins</div>
-                        <div class="credential"> Manager - Product Analytics  - Weedmaps</div>
+                        <div class="credential">Head of Analytics - Weedmaps</div>
                         <div class="credential">Ex-Blizzard Leadership</div>
                         <div class="credential">Fortune 500 Experience</div>
                     </div>
-                    <p class="about-text">
+                    <p class="about-desc">
                         Through Lorekeepers Haven and my community as MelloBeard, I share insights on analytics, leadership, and the intersection of gaming and business strategy—helping others navigate their transformation journeys with the wisdom of experience.
                     </p>
                 </div>
@@ -1018,11 +1194,11 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Professional Journey</h2>
-                <p class="section-subtitle">A proven track record of delivering measurable results across diverse industries and company scales</p>
+                <p class="section-subtitle">A proven track record of delivering results across diverse industries and company scales</p>
             </div>
             <div class="timeline">
                 <div class="timeline-item fade-in">
-                    <h3 class="timeline-role"> Manager - Product Analytics </h3>
+                    <h3 class="timeline-role">Head of Analytics</h3>
                     <div class="timeline-company">Weedmaps (MAPS) - Public Cannabis Technology Platform</div>
                     <div class="timeline-date">February 2025 - Present</div>
                     <ul class="timeline-achievements">
@@ -1078,8 +1254,8 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info fade-in">
-                    <h2>Ready to Transform Your Analytics?</h2>
-                    <p class="contact-description">
+                    <h2 class="contact-title">Ready to Transform Your Analytics?</h2>
+                    <p class="contact-desc">
                         Let's discuss how my proven expertise in enterprise data transformation, team leadership, and operational excellence can accelerate your organization's success. I work with companies ready to invest in meaningful change.
                     </p>
                     
@@ -1172,7 +1348,7 @@
     <script>
         'use strict';
         
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation links with security checks
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1202,6 +1378,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -1223,15 +1400,17 @@
             }
         });
 
-        // Header scroll effect
+        // Header scroll effect with performance optimization
         let ticking = false;
         function updateHeader() {
             const header = document.querySelector('header');
             if (header) {
                 if (window.scrollY > 100) {
-                    header.style.background = 'rgba(26, 54, 93, 0.98)';
+                    header.style.background = 'rgba(35, 57, 91, 0.95)';
+                    header.style.backdropFilter = 'blur(10px)';
                 } else {
-                    header.style.background = 'rgba(26, 54, 93, 0.95)';
+                    header.style.background = 'linear-gradient(135deg, #23395B 0%, #6B8F71 100%)';
+                    header.style.backdropFilter = 'none';
                 }
             }
             ticking = false;
@@ -1244,21 +1423,26 @@
             }
         });
 
-        // Enhanced animations
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
+        // Security and error handling
+        window.addEventListener('error', function(e) {
+            console.log('An error occurred');
+            return true;
+        });
+
+        // Security: Remove unauthorized scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            const scripts = document.querySelectorAll('script[src]');
+            scripts.forEach(script => {
+                const src = script.getAttribute('src');
+                if (src && !src.startsWith('data:') && !src.startsWith('blob:')) {
+                    const allowedDomains = ['cdnjs.cloudflare.com'];
+                    const url = new URL(src, window.location.origin);
+                    if (!allowedDomains.includes(url.hostname) && url.origin !== window.location.origin) {
+                        script.remove();
+                    }
                 }
             });
-        };
-
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Initial check
+        });
     </script>
 </body>
 </html>
