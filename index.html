@@ -841,33 +841,55 @@
                 </div>
                 
                 <div class="contact-form fade-in">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required maxlength="100" pattern="[A-Za-z\s\-\.]{2,100}" title="Please enter a valid name (letters, spaces, hyphens, and periods only)">
+                    <div style="text-align: center; padding: 2rem;">
+                        <h3 style="color: var(--text-dark); margin-bottom: 1.5rem;">Ready to Start Your Journey?</h3>
+                        <p style="color: var(--text-light); margin-bottom: 2rem; line-height: 1.6;">
+                            I'd love to hear about your project and discuss how we can work together to achieve your goals. 
+                            Reach out through any of the channels below, and I'll get back to you promptly.
+                        </p>
+                        
+                        <div style="display: grid; gap: 1rem; max-width: 400px; margin: 0 auto;">
+                            <a href="mailto:mellobeard@lorekeepershaven.com?subject=Consulting%20Inquiry&body=Hi%20Andrew,%0D%0A%0D%0AI'm%20interested%20in%20discussing..." 
+                               style="display: flex; align-items: center; padding: 1rem; background: var(--primary-color); color: var(--white); text-decoration: none; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(35, 57, 91, 0.3);"
+                               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(35, 57, 91, 0.4)'"
+                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(35, 57, 91, 0.3)'">
+                                <span style="font-size: 1.5rem; margin-right: 1rem;">📧</span>
+                                <div>
+                                    <div style="font-weight: 600;">Send Email</div>
+                                    <div style="font-size: 0.9rem; opacity: 0.9;">mellobeard@lorekeepershaven.com</div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/andrew-pace-never-games/" target="_blank" rel="noopener noreferrer"
+                               style="display: flex; align-items: center; padding: 1rem; background: var(--accent-color); color: var(--primary-color); text-decoration: none; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(192, 162, 93, 0.3);"
+                               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(192, 162, 93, 0.4)'"
+                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(192, 162, 93, 0.3)'">
+                                <span style="font-size: 1.5rem; margin-right: 1rem;">💼</span>
+                                <div>
+                                    <div style="font-weight: 600;">Connect on LinkedIn</div>
+                                    <div style="font-size: 0.9rem; opacity: 0.8;">Professional networking</div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.twitch.tv/mellobeard" target="_blank" rel="noopener noreferrer"
+                               style="display: flex; align-items: center; padding: 1rem; background: var(--support-color); color: var(--white); text-decoration: none; border-radius: 10px; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(107, 143, 113, 0.3);"
+                               onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(107, 143, 113, 0.4)'"
+                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 3px 10px rgba(107, 143, 113, 0.3)'">
+                                <span style="font-size: 1.5rem; margin-right: 1rem;">🎮</span>
+                                <div>
+                                    <div style="font-weight: 600;">Join the Community</div>
+                                    <div style="font-size: 0.9rem; opacity: 0.9;">Catch me live on Twitch</div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required maxlength="254" title="Please enter a valid email address">
+                        
+                        <div style="margin-top: 2rem; padding: 1rem; background: var(--bg-light); border-radius: 10px;">
+                            <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">
+                                <strong>Response Time:</strong> I typically respond within 24 hours during business days.
+                                For urgent matters, LinkedIn messaging often gets the fastest response.
+                            </p>
                         </div>
-                        <div class="form-group">
-                            <label for="service">Service Interest</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service</option>
-                                <option value="analytics-transformation">Analytics Transformation</option>
-                                <option value="executive-leadership">Executive Leadership</option>
-                                <option value="strategic-operations">Strategic Operations</option>
-                                <option value="team-building">Team Building & Scaling</option>
-                                <option value="data-infrastructure">Data Infrastructure</option>
-                                <option value="multiple">Multiple Services</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your project or goals..." required maxlength="2000" rows="5"></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -884,35 +906,6 @@
         // Security: Prevent common XSS attacks
         'use strict';
         
-        // Input validation and sanitization functions
-        function sanitizeInput(input) {
-            if (typeof input !== 'string') return '';
-            return input.replace(/[<>\"'&]/g, function(match) {
-                const map = {
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#x27;',
-                    '&': '&amp;'
-                };
-                return map[match];
-            });
-        }
-
-        function validateEmail(email) {
-            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return emailRegex.test(email) && email.length <= 254;
-        }
-
-        function validateName(name) {
-            const nameRegex = /^[A-Za-z\s\-\.]{2,100}$/;
-            return nameRegex.test(name);
-        }
-
-        // Rate limiting for form submissions
-        let lastSubmissionTime = 0;
-        const SUBMISSION_COOLDOWN = 5000; // 5 seconds
-
         // Smooth scrolling for navigation links with security checks
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -954,69 +947,6 @@
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
             });
-        });
-
-        // Secure form submission handling
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('.contact-form form');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Rate limiting check
-                    const currentTime = Date.now();
-                    if (currentTime - lastSubmissionTime < SUBMISSION_COOLDOWN) {
-                        alert('Please wait before submitting another message.');
-                        return;
-                    }
-
-                    // Get and validate form data
-                    const formData = new FormData(this);
-                    const name = formData.get('name');
-                    const email = formData.get('email');
-                    const message = formData.get('message');
-
-                    // Client-side validation
-                    if (!name || !validateName(name)) {
-                        alert('Please enter a valid name (2-100 characters, letters only).');
-                        return;
-                    }
-
-                    if (!email || !validateEmail(email)) {
-                        alert('Please enter a valid email address.');
-                        return;
-                    }
-
-                    if (!message || message.length < 10 || message.length > 2000) {
-                        alert('Please enter a message between 10 and 2000 characters.');
-                        return;
-                    }
-
-                    // Update last submission time
-                    lastSubmissionTime = currentTime;
-
-                    // Sanitize data for display (if needed)
-                    const sanitizedData = {
-                        name: sanitizeInput(name),
-                        email: sanitizeInput(email),
-                        message: sanitizeInput(message)
-                    };
-
-                    // Show success message
-                    alert('Thank you for your message! I\'ll get back to you soon.');
-                    this.reset();
-                });
-            }
-        });
-
-        // Security: Disable right-click context menu on sensitive elements
-        document.addEventListener('contextmenu', function(e) {
-            // Allow right-click on form inputs for usability
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
-                return;
-            }
-            // Uncomment the line below if you want to disable right-click completely
-            // e.preventDefault();
         });
 
         // Mobile menu toggle with security validation
